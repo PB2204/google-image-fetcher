@@ -1,6 +1,6 @@
 {
   "name": "google-image-fetcher",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A JavaScript library for fetching and saving Google Images",
   "main": "google-image-fetcher.js",
   "repository": {
@@ -10,7 +10,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["google", "images", "fetcher"],
+  "keywords": [
+    "google",
+    "images",
+    "fetcher"
+  ],
   "author": "Pabitra Banerjee",
   "license": "MIT",
   "dependencies": {
