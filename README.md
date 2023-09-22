@@ -106,6 +106,121 @@ npm install google-image-fetcher
 
 Now you're ready to use the library to fetch and save images.
 
+## Getting Started With React
+
+In a React application, you would typically use JavaScript modules and ES6 imports instead of `require`. Here's the equivalent code for your example using ES6 imports in a React component:
+
+```javascript
+import React, { useEffect } from 'react';
+import GoogleImageFetcher from 'google-image-fetcher';
+
+const YourComponent = () => {
+  useEffect(() => {
+    // Create an instance of GoogleImageFetcher (no need to pass API Key and CX ID here)
+    const imageFetcher = new GoogleImageFetcher();
+
+    // Define the query and the save folder (optional)
+    const query = 'YOUR_QUERY';
+    const saveFolder = 'YOUR_FOLDER_NAME';
+
+    // Call the fetchImages method to fetch and save images
+    imageFetcher.fetchImages(query, saveFolder);
+
+    // Make sure to include any necessary dependencies in the dependency array
+  }, []);
+
+  return (
+    <div>
+      {/* Your React component content */}
+    </div>
+  );
+};
+
+export default YourComponent;
+```
+
+In this code:
+
+- We're using the `import` statement to import `GoogleImageFetcher` from the 'google-image-fetcher' package.
+- Inside a functional component (`YourComponent`), we use the `useEffect` hook to run code when the component mounts. This is similar to the code you provided that runs when the module is imported.
+- We create an instance of `GoogleImageFetcher` and then call `fetchImages` with your desired `query` and `saveFolder`. This code will execute when the component is mounted due to the empty dependency array `[]`.
+- You can replace `<div>{/* Your React component content */}</div>` with your actual component content.
+
+Remember to include any necessary dependencies in the dependency array of the `useEffect` hook to ensure the code runs only when those dependencies change. If you need to execute the code in response to specific events or user actions, you can adjust the `useEffect` accordingly.
+
+## Getting Started With Angular A TypeScript Based Framework
+
+In an Angular application, you would follow a different structure and syntax compared to React. Here's how you can integrate the code for fetching images using `google-image-fetcher` into an Angular component:
+
+Assuming you have an Angular project set up, follow these steps:
+
+1. **Import and Use in an Angular Component:**
+
+   Create an Angular component where you want to use `google-image-fetcher`. Import the library and use it in your component's TypeScript file. Below is an example of how to do this:
+
+   ```typescript
+   // Import statements
+   import { Component, OnInit } from '@angular/core';
+   import { GoogleImageFetcher } from 'google-image-fetcher';
+
+   @Component({
+     selector: 'app-image-fetcher',
+     template: `
+       <div>
+         <!-- Your Angular component content -->
+       </div>
+     `,
+   })
+   export class ImageFetcherComponent implements OnInit {
+     constructor() {}
+
+     ngOnInit() {
+       // Create an instance of GoogleImageFetcher (no need to pass API Key and CX ID here)
+       const imageFetcher = new GoogleImageFetcher();
+
+       // Define the query and the save folder (optional)
+       const query = 'YOUR_QUERY';
+       const saveFolder = 'YOUR_FOLDER_NAME';
+
+       // Call the fetchImages method to fetch and save images
+       imageFetcher.fetchImages(query, saveFolder);
+     }
+   }
+   ```
+
+   In this code:
+
+   - We import the `GoogleImageFetcher` class from the 'google-image-fetcher' package.
+   - We create an Angular component (`ImageFetcherComponent`) where we use `GoogleImageFetcher` inside the `ngOnInit` lifecycle hook, which runs when the component initializes.
+   - We define the `query` and `saveFolder` variables with your desired values.
+   - We create an instance of `GoogleImageFetcher` and call the `fetchImages` method to fetch and save images.
+   - You can replace the template content with your actual Angular component content.
+
+2. **Add the Component to Your Angular Module:**
+
+   Make sure to add your `ImageFetcherComponent` to the declarations array of your Angular module (e.g., `app.module.ts`) to make it available for use in your application.
+
+   ```typescript
+   import { NgModule } from '@angular/core';
+   import { BrowserModule } from '@angular/platform-browser';
+
+   import { AppComponent } from './app.component';
+   import { ImageFetcherComponent } from './image-fetcher.component'; // Import your component
+
+   @NgModule({
+     declarations: [AppComponent, ImageFetcherComponent], // Add your component here
+     imports: [BrowserModule],
+     bootstrap: [AppComponent],
+   })
+   export class AppModule {}
+   ```
+
+3. **Include in Template:**
+
+   Include your `ImageFetcherComponent` in the template of another Angular component or in your Angular routing configuration as needed.
+
+Now, your Angular component is set up to use `google-image-fetcher`. When you navigate to the component or use it in your application, the code inside `ngOnInit` will be executed to fetch and save images.
+
 ## Configuration
 
 Before using the library, make sure to obtain an API Key and CX ID from the Google Custom Search JSON API. Replace the values in the code with your actual credentials.

@@ -1,6 +1,6 @@
 {
   "name": "google-image-fetcher",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A JavaScript library for fetching and saving Google Images",
   "main": "google-image-fetcher.js",
   "repository": {
